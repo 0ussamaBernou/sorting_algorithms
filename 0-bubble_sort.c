@@ -11,14 +11,16 @@
  */
 void bubble_sort(int *array, size_t size)
 {
-	size_t i, j, swaped;
+	size_t i, j, k, swaped;
+
+	k = size;
 
 	/* Repeat n-1 times */
 	for (j = 0; j < size - 1; j++)
 	{
 		swaped = 0;
 		/* For i from 0 to n–2 */
-		for (i = 0; i <= size - 2; i++)
+		for (i = 0; i <= k - 2; i++)
 		{
 			/* If numbers[i] and numbers[i+1] out of order */
 			if (array[i] > array[i + 1])
@@ -32,6 +34,7 @@ void bubble_sort(int *array, size_t size)
 		{
 			return;
 		}
+		k--;
 	}
 }
 
