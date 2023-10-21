@@ -11,18 +11,18 @@
 void selection_sort(int *array, size_t size)
 {
 	size_t i, j;
-	int *tmp;
+	int *min;
 	for (i = 0; i < size; i++)
 	{
-		tmp = &array[i];
+		min = &array[i];
 		for (j = i; j < size; j++)
 		{
-			if (*tmp > array[j])
+			if (*min > array[j])
 			{
-				tmp = &array[j];
+				min = &array[j];
 			}
 		}
-		swap(tmp, &array[i]);
+		swap(min, &array[i]);
 		print_array(array, size);
 	}
 }
