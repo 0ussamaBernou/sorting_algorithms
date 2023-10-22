@@ -25,7 +25,8 @@ void selection_sort(int *array, size_t size)
 				min_idx = j;
 		}
 
-		/* Swap the found minimum element with the first element if it is not at the initial position */
+		/* Swap the found minimum element with the first element */
+		/* if it is not at the initial position */
 		if (min_idx != i)
 		{
 			/* Swap array[i] and array[min_idx] */
