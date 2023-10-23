@@ -1,0 +1,86 @@
+#include "sort.h"
+#include <stddef.h>
+#include <stdio.h>
+
+/**
+ * partition - function to partition the array
+ * @array: pointer to an array
+ * @low: starting index
+ * @high: ending index
+ * @size: size of the array
+ *
+ * Return: the index of the pivot element
+ */
+int partition(int *array, int low, int high, size_t size)
+{
+	int j;
+	int pivot = array[high];
+	int i = (low - 1);
+
+	for (j = low; j < high; j++)
+	{
+		if (array[j] <= pivot)
+		{
+			i++;
+			swap(&array[i], &array[j]);
+			print_array(array, size);
+		}
+	}
+	swap(&array[i + 1], &array[high]);
+	print_array(array, size);
+
+	return (i + 1);
+}
+/**
+ * quick_sort - quick sort an array
+ * @array: pointer to an array
+ * @size: size of the array
+ */
+void quick_sort(int *array, size_t size)
+{
+	int stack[size];
+	int top = -1;
+	int low = 0;
+	int high = size - 1;
+
+	stack[++top] = low;
+	stack[++top] = high;
+
+	while (top >= 0)
+	{
+		high = stack[top--];
+		low = stack[top--];
+
+		int pivotIndex = partition(array, low, high, size);
+
+		if (pivotIndex - 1 > low)
+		{
+			stack[++top] = low;
+			stack[++top] = pivotIndex - 1;
+		}
+
+		if (pivotIndex + 1 < high)
+		{
+			stack[++top] = pivotIndex + 1;
+			stack[++top] = high;
+		}
+	}
+}
+
+/**
+ * swap - swap two ints
+ *
+ * @a: first int
+ * @b: second int
+ *
+ * Return: 1 indicating a swap
+ */
+size_t swap(int *a, int *b)
+{
+	int tmp;
+
+	tmp = *b;
+	*b = *a;
+	*a = tmp;
+	return 1;
+}
