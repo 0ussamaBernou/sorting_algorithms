@@ -2,6 +2,12 @@
 #include <stddef.h>
 #include <stdio.h>
 
+/**
+ * quick_sort - quick sort an array
+ * @array: pointer to an array
+ * @size: size of the array
+ *
+ */
 void quick_sort(int *array, size_t size)
 {
 	int i;
@@ -14,7 +20,6 @@ void quick_sort(int *array, size_t size)
 	}
 
 	pivot = array[size - 1];
-	/* printf("pivot: %d\n", pivot); */
 	i = -1;
 
 	for (j = 0; j < size - 1; j++)
