@@ -12,13 +12,19 @@ void selection_sort(int *array, size_t size)
 	size_t i, j, min_idx;
 	int temp;
 
+	if (array == NULL || size == 0)
+	{
+		return;
+	}
+
 	/* Traverse through all array elements */
 	for (i = 0; i < size - 1; i++)
 	{
 		/* Assume the current index is the minimum */
 		min_idx = i;
 
-		/* Find the index of the minimum element in the remaining unsorted array */
+		/* Find the index of the minimum element in the remaining
+		 * unsorted array */
 		for (j = i + 1; j < size; j++)
 		{
 			if (array[j] < array[min_idx])
