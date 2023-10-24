@@ -2,7 +2,6 @@
 
 /**
  * selection_sort - Sorts an array of integers in ascending order
- * selection sort algorithm
  *
  * @array: Array to be sorted
  * @size: Array's size
