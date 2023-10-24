@@ -5,6 +5,7 @@
  *
  * @array: Array to be sorted
  * @size: Array's size
+ * Return: void
  **/
 void selection_sort(int *array, size_t size)
 {
