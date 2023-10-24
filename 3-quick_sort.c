@@ -12,6 +12,7 @@
 size_t swap(int *a, int *b)
 {
 	int temp = *a;
+
 	*a = *b;
 	*b = temp;
 	return (1);
@@ -68,6 +69,7 @@ void quick_sort_helper(int *array, int lo, int hi, size_t size)
 	if (lo < hi)
 	{
 		int p = partition(array, lo, hi, size);
+
 		quick_sort_helper(array, lo, p - 1, size);
 		quick_sort_helper(array, p + 1, hi, size);
 	}

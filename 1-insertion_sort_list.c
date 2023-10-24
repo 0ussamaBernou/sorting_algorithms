@@ -30,7 +30,6 @@ void insertion_sort_list(listint_t **list)
  *
  * @a: first int
  * @b: second int
- *
  * Return: 1 indicating a swap
  */
 size_t swap(int *a, int *b)
@@ -40,5 +39,5 @@ size_t swap(int *a, int *b)
 	tmp = *b;
 	*b = *a;
 	*a = tmp;
-	return 1;
+	return (1);
 }
